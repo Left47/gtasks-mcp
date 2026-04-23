@@ -17,7 +17,8 @@
     "build": "tsc && shx chmod +x dist/*.js",
     "prepare": "npm run build",
     "dev": "tsc --watch",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^3.0.1",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.9.3",
+    "patch-package": "^8.0.1",
     "shx": "^0.3.4",
     "typescript": "^5.6.2"
   }
