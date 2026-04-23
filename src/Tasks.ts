@@ -69,6 +69,7 @@ export class TaskResources {
     for (const taskList of taskLists) {
       const tasksResponse = await tasks.tasks.list({
         tasklist: taskList.id,
+        showAssigned: true,
         ...params,
       });
 
@@ -117,6 +118,7 @@ export class TaskActions {
           const tasksResponse = await tasks.tasks.list({
             tasklist: taskList.id,
             maxResults: MAX_TASK_RESULTS,
+            showAssigned: true,
           });
 
           const items = tasksResponse.data.items || [];
